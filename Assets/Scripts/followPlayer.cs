@@ -2,16 +2,17 @@
 
 public class followPlayer : MonoBehaviour
 {
-    public Transform player;
     public Vector3 offset;
+    public Transform player;
+
+    void Start()
+    {
+        player = GameObject.Find("Player").transform;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        //transform.position = FindObjectOfType<Transform>().position + offset;
-        //Debug.Log(transform.position.ToString());
-        //Debug.Log(offset);
-        //Debug.Log(FindObjectOfType<GameObject>().name);
         transform.position = player.position + offset;
     }
 }

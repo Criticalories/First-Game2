@@ -7,10 +7,15 @@ public class Score : MonoBehaviour
     public Transform player;
     public Text scoreText;
 
+    void Start()
+    {
+        player = GameObject.Find("Player").transform;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        //scoreText.text = FindObjectOfType<Transform>().position.z.ToString("0");
+        // "0" rounds number to whole decimals
         scoreText.text = player.position.z.ToString("0");
     }
 }

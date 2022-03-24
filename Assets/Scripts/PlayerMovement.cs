@@ -3,9 +3,9 @@
 public class PlayerMovement : MonoBehaviour
 {
 
-    public Rigidbody rb;
-    public float forwardForce = 2000f;
-    public float sidewaysForce = 500f;
+    [SerializeField] private Rigidbody rb;
+    [SerializeField] private float forwardForce = 2000f;
+    [SerializeField] private float sidewaysForce = 500f;
 
     // Update is called once per frame
     void FixedUpdate()

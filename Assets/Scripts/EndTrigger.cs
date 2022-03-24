@@ -2,9 +2,13 @@
 
 public class EndTrigger : MonoBehaviour
 {
-    public GameManager gameManager;
+    public GameManager gameManager;   
     void OnTriggerEnter ()
     {
-        gameManager.CompleteLevel();
+        if (gameManager.gameHasEnded == false)
+        {
+            gameManager.CompleteLevel();
+            FindObjectOfType<Score>().setGlobalTimer();
+        }
     }
 }

@@ -2,8 +2,8 @@
 
 public class followPlayer : MonoBehaviour
 {
-    public Vector3 offset;
-    public Transform player;
+    [SerializeField] private Vector3 offset;
+    [SerializeField] private Transform player;
 
     void Start()
     {

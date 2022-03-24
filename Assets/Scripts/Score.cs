@@ -4,18 +4,23 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour
 {
 
-    public Transform player;
-    public Text scoreText;
+    private Transform player;
+    [SerializeField] private Text scoreText;
+    private float localTimer;
 
     void Start()
     {
         player = GameObject.Find("Player").transform;
+        localTimer = PlayerPrefs.GetFloat("globalTimer");
     }
-
-    // Update is called once per frame
     void Update()
     {
-        // "0" rounds number to whole decimals
-        scoreText.text = player.position.z.ToString("0");
+        localTimer += Time.deltaTime;
+        scoreText.text = localTimer.ToString("0");     
     }
+    public void setGlobalTimer()
+    {    
+        PlayerPrefs.SetFloat("globalTimer", localTimer);
+    }
+
 }
